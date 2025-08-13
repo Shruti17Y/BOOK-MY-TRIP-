@@ -1,21 +1,69 @@
-  login page --> signup,login(admin,customer)
-    |
-    home page --> new trip,history,update profile details
-    |
-    new trip page --> add trip details --> book transport,book hotels 
-    |
-    Payment page --> netbanking,upi
-    |
-    Trip summary --> back to home page or make another trip
+APPLICATION FLOW & PROJECT STRUCTURE
 
+------------------------------------------------------------
+FLOW:
+------------------------------------------------------------
+LOGIN PAGE
+ ├── SIGN UP (Admin / Customer)
+ └── LOGIN (Admin / Customer)
+       |
+       v
+HOME PAGE
+ ├── NEW TRIP
+ │     ├── ADD TRIP DETAILS
+ │     ├── BOOK TRANSPORT
+ │     └── BOOK HOTELS
+ │            |
+ │            v
+ │         PAYMENT PAGE
+ │          ├── Net Banking
+ │          └── UPI
+ │                |
+ │                v
+ │            TRIP SUMMARY
+ │              ├── Back to Home
+ │              └── Make Another Trip
+ │
+ ├── HISTORY
+ └── UPDATE PROFILE DETAILS
 
-  GP_SEM-3/
-      ├── run.py              # Entry point for your application, handles routing or page navigation
-      ├── Authenticate.py             # Handles login and signup processes
-      ├── home.py              # Manages home page options (new trip, history, update profile)
-      ├── trip.py              # Manages new trip functionality (add trip details)
-      |-- transport.py         # manages booking of transport(mode of transport,booking transport)
-      |-- hotels.py            # Manages hotels booking functionality  
-      ├── payment.py           # Handles payment options (net banking, UPI)
-      ├── summary.py           # Manages the trip summary (navigate to home or make another trip)
-      
+------------------------------------------------------------
+FOLDER & FILE STRUCTURE:
+------------------------------------------------------------
+GP_SEM-3/
+│
+├── run.py               # Main entry point; starts app and routes between pages
+│
+├── Authenticate.py       # Handles user/admin signup & login logic
+│
+├── home.py               # Displays home page options:
+│                         # - New Trip
+│                         # - History
+│                         # - Update Profile
+│
+├── trip.py               # Manages new trip creation:
+│                         # - Add trip details
+│                         # - Calls transport.py & hotels.py
+│
+├── transport.py          # Handles transport booking:
+│                         # - Mode of transport
+│                         # - Booking confirmation
+│
+├── hotels.py             # Handles hotel booking:
+│                         # - Hotel search
+│                         # - Booking confirmation
+│
+├── payment.py            # Payment processing:
+│                         # - Net Banking
+│                         # - UPI
+│
+├── summary.py            # Trip summary page:
+│                         # - Display booked trip details
+│                         # - Option to return home or make another trip
+│
+├── database.py           # Database connection and queries
+│
+├── flow.txt              # Project flow documentation
+│
+└── __pycache__/          # Auto-generated Python cache files
+------------------------------------------------------------
