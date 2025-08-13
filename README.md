@@ -1,0 +1,21 @@
+  login page --> signup,login(admin,customer)
+    |
+    home page --> new trip,history,update profile details
+    |
+    new trip page --> add trip details --> book transport,book hotels 
+    |
+    Payment page --> netbanking,upi
+    |
+    Trip summary --> back to home page or make another trip
+
+
+  GP_SEM-3/
+      ├── run.py              # Entry point for your application, handles routing or page navigation
+      ├── Authenticate.py             # Handles login and signup processes
+      ├── home.py              # Manages home page options (new trip, history, update profile)
+      ├── trip.py              # Manages new trip functionality (add trip details)
+      |-- transport.py         # manages booking of transport(mode of transport,booking transport)
+      |-- hotels.py            # Manages hotels booking functionality  
+      ├── payment.py           # Handles payment options (net banking, UPI)
+      ├── summary.py           # Manages the trip summary (navigate to home or make another trip)
+      
